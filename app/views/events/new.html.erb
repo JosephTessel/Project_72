@@ -1,0 +1,19 @@
+new
+<div class = "row">
+<%= form_for @event do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, required:true %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, required:true %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date, required:true %>
+
+  <%= f.submit "Submit Design!", class:"button" %>
+
+
+  
+<% end %>
+</div>
