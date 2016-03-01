@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
-     flash[:notice] = "Design Submitted!"
+     flash[:notice] = "Event Submitted!"
      redirect_to events_path
     else
      render :new

@@ -68,4 +68,5 @@ gem 'angularjs-rails'
 
 gem 'compass-rails'
 gem 'materialize-sass'
-          
+
+gem "acts_as_follower"

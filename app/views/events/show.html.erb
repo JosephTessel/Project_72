@@ -1,4 +1,12 @@
+<%= link_to "Main Page", events_path %>
+
   <%= @event.title %> </br>
   <%= @event.description %> </br>
   <%= @event.date %> </br>
-<%= @event.user.id %></br>
+
+
+<%= @event.user.first_name%></br>
+<%= @event.user.last_name%></br>
+
+<% if current_user%>
+<%= %>
