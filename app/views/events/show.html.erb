@@ -1,15 +1,32 @@
 <%= link_to "Main Page", events_path %>
 
-  <%= @event.title %> </br>
-  <%= @event.description %> </br>
-  <%= @event.date %> </br>
+<%if current_user != nil%></br></br>
+Current_user: <%=current_user.first_name%> <%=current_user.last_name%>
+<%end%></br>
+  <%= "event title: " + @event.title %> </br>
+  <%= "event description: " +@event.description %> </br>
+</br><%="event date: "+ @event.date %> </br>
 
-
-<%= @event.user.first_name%></br>
+</br><%="event creator: "%>
+<%= @event.user.first_name%>
 <%= @event.user.last_name%></br>
+</br>
+</br>
+Conditionals/testing
+</br>
+<%if current_user != nil%>
 <%= current_user.last_name%></br></br>
+<%else%>
+<%= "not signed in"%>
+<%end%>
 Guestlist
 <%@event.followers.reverse.each do |f|%>
 <li type= "1"/><%=f.first_name%>  <%=f.last_name%></li>
 <%end%>
-<%binding.pry%>
+
+
+Sign up to the guestlist:
+link_to 'Follow',
+radius small'
+
+<%= link_to "Follow", followers_event_path(current_user) %>
