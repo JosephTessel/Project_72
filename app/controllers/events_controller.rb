@@ -12,8 +12,21 @@ class EventsController < ApplicationController
   end
 
   def show
-  @event = Event.find(params[:id])
+    @event = Event.find(params[:id])
+    @user = current_user
+    @guestlist = Guestlist.new
+    @guestlists = @event.guestlists.order(created_at: :desc)
+
   end
+
+  def stop_following
+    @event = Event.find(params[:id])
+    @user = current_user
+    if @user.following?(@event)
+      @user.stop_following(@event)
+    end
+  end
+
 
   def create
     @event = Event.new(event_params)
