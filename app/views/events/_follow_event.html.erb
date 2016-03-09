@@ -1,0 +1,6 @@
+<% unless @user == current_user %>
+  <% if @user.following?(@event) %>
+    <%= button_to("Un-Follow #{@event.title}", @user_follow_path(@event.to_param, @user.get_follow(@event).id), :method => :delete, :remote => true) %>
+  <% else %>
+    <%= button_to("Follow #{@event.title}", @user_follows_path(@event.to_param), :remote => true) %>
+  <% end %><% end %>
