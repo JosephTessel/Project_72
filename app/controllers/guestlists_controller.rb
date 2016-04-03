@@ -22,17 +22,10 @@ class GuestlistsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @event = Event.find(params[:event_id])
-    @guestlist = Guestlist.find(params[:id])
-    if current_user != nil
-      if @guestlist.user == current_user || current_user.role == "admin"
-        @deleteguestlist = Guestlist.find(params[:user.id]).destroy
-        redirect_to event_path(@event)
-      else
-        redirect_to events_path
-        flash[:notice] = "You can't destroy other people's guestlists!"
-      end
-    end
+    @guestlist = @event.guestlists
+    @delete_guestlist = Guestlist.find(@event.guestlists.where(@event.guestlists.user == current_user))
   end
 
   protected
