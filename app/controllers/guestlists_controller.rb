@@ -22,10 +22,10 @@ class GuestlistsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @event = Event.find(params[:event_id])
-    @guestlist = @event.guestlists
-    @delete_guestlist = Guestlist.find(@event.guestlists.where(@event.guestlists.user == current_user))
+    @guestlist = @event.guestlists.find_by(user_id: current_user.id)
+    @guestlist.destroy
+    redirect_to root_path
   end
 
   protected
