@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :events
-  has_many :guestlists
-  
+  has_many :guestlists, dependent: :destroy
+
   validates :email, presence: true
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }

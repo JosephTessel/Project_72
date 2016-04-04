@@ -5,14 +5,11 @@ Current_user: <%=@user.first_name%> <%=@user.last_name%>
 <%end%></br>
   <%= "event title: " + @event.title %> </br>
   <%= "event description: " +@event.description %> </br>
-</br><%="event date: "+ @event.date %> </br>
-
-</br><%="event creator: "%>
+<%="event date: "+ @event.date %> </br>
+<%="event creator: "%>
 <%= @event.user.first_name%>
 <%= @event.user.last_name%></br>
 </br>
-</br>
-Conditionals/testing
 </br>
 
 <row>
@@ -22,21 +19,16 @@ GUESTLIST:</br></br>
 <%end%>
 </row>
 
-
-
-
-Sign up to the guestlist:
-link_to 'Follow',
-radius small'
-
+<% if @event.guestlists.find_by(user_id: current_user.id) == nil%>
 <%= form_for [@event, @guestlist] do |f| %>
 <%f.label :user_id%>
 <%= hidden_field_tag "user_id", current_user.id %>
 <%f.label :event_id%>
 <%= hidden_field_tag "event_id", @event.id %>
 
-    <%= f.submit "Submit", class:"button" %>
+    <%= f.submit "Attend!", class:"button" %>
 
+<%end%>
 <%end%>
 
 
@@ -46,27 +38,6 @@ radius small'
 
 <%end%>
 
-              <!-- <%= button_to "Delete this Review", event_guestlist_path(@event, @user.id), method: :delete, class: "button" %> -->
-
-                <!DOCTYPE html>
-                <html>
-                  <head>
-                    <!--Import Google Icon Font-->
-                    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-                    <!--Import materialize.css-->
-                    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-                    <!--Let browser know website is optimized for mobile-->
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                  </head>
-
-                  <body>
-                    <!--Import jQuery before materialize.js-->
-                    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-                    <script type="text/javascript" src="js/materialize.min.js"></script>
-                  </body>
-                </html>
-<% binding.pry%>
 <% if @event.guestlists.find_by(user_id: current_user.id) != nil%>
   <%= link_to 'Destroy', event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete %>
 <%end%>

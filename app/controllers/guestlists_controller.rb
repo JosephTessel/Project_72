@@ -4,7 +4,11 @@ class GuestlistsController < ApplicationController
     @guestlist = Guestlist.new
   end
   def show
-  redirect_to :back
+    @event = Event.find(params[:event_id])
+    @guestlist = @event.guestlists.find_by(user_id: current_user.id)
+    @guestlist.destroy
+    
+    redirect_to event_path(@event)
   end
   def create
     @guestlist = Guestlist.new(guestlist_params)
@@ -27,7 +31,7 @@ class GuestlistsController < ApplicationController
     @event = Event.find(params[:event_id])
     @guestlist = @event.guestlists.find_by(user_id: current_user.id)
     @guestlist.destroy
-    redirect_to root_path
+    redirect_to event_path(@event)
   end
 
   protected
