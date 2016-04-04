@@ -12,13 +12,15 @@ Current_user: <%=@user.first_name%> <%=@user.last_name%>
 </br>
 </br>
 
+
+<%if current_user.role == "admin"%>
 <row>
 GUESTLIST:</br></br>
 <%@event.guestlists.each do |f|%>
 <%=User.find(f.user_id).first_name.to_s + " " + User.find(f.user_id).last_name.to_s + " Phone Number: " + User.find(f.user_id).phone_number.to_s%></br>
 <%end%>
 </row>
-
+<%end%>
 <% if @event.guestlists.find_by(user_id: current_user.id) == nil%>
 <%= form_for [@event, @guestlist] do |f| %>
 <%f.label :user_id%>
@@ -31,13 +33,12 @@ GUESTLIST:</br></br>
 <%end%>
 <%end%>
 
-
-
 <%@event.guestlists.each do |f|%>
 <% @event.guestlists.where(f.user_id == current_user.id)%>
 
 <%end%>
 
 <% if @event.guestlists.find_by(user_id: current_user.id) != nil%>
-  <%= link_to 'Destroy', event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete %>
+Thank you for signing up!!! :)
+  <%= link_to "I'm not attending", event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete %>
 <%end%>
