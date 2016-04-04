@@ -66,5 +66,7 @@ radius small'
                     <script type="text/javascript" src="js/materialize.min.js"></script>
                   </body>
                 </html>
-<%binding.pry%>
+<% binding.pry%>
+<% if @event.guestlists.find_by(user_id: current_user.id) != nil%>
   <%= link_to 'Destroy', event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete %>
+<%end%>

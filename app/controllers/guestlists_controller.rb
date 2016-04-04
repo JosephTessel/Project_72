@@ -3,7 +3,9 @@ class GuestlistsController < ApplicationController
     @event = Event.find(params[:event_id])
     @guestlist = Guestlist.new
   end
-
+  def show
+  redirect_to :back
+  end
   def create
     @guestlist = Guestlist.new(guestlist_params)
     @event = Event.find(params[:event_id])
