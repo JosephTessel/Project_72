@@ -1,10 +1,6 @@
-<%= link_to "Main Page", events_path %>
-
-<%if @user != nil%></br></br>
-Current_user: <%=@user.first_name%> <%=@user.last_name%>
-<%end%></br>
-  <%= "event title: " + @event.title %> </br>
-  <%= "event description: " +@event.description %> </br>
+</br></br>
+<%= "event title: " + @event.title %> </br>
+<%= "event description: " +@event.description %> </br>
 <%="event date: "+ @event.date %> </br>
 <%="event creator: "%>
 <%= @event.user.first_name%>
@@ -12,33 +8,39 @@ Current_user: <%=@user.first_name%> <%=@user.last_name%>
 </br>
 </br>
 
-
-<%if current_user.role == "admin"%>
-<row>
-GUESTLIST:</br></br>
-<%@event.guestlists.each do |f|%>
-<%=User.find(f.user_id).first_name.to_s + " " + User.find(f.user_id).last_name.to_s + " Phone Number: " + User.find(f.user_id).phone_number.to_s%></br>
+<%if @user != nil%>
+  <%if current_user.role == "admin"%>
+  <row>
+    GUESTLIST:</br></br>
+    <%@event.guestlists.each do |f|%>
+      <%=User.find(f.user_id).first_name.to_s + " " + User.find(f.user_id).last_name.to_s + " Phone Number: " + User.find(f.user_id).phone_number.to_s%></br>
+      <%end%>
+    <%end%>
+  </row>
 <%end%>
-</row>
+  <%if @user != nil%>
+    <% if @event.guestlists.find_by(user_id: current_user.id) == nil%>
+      <%= form_for [@event, @guestlist] do |f| %>
+        <%f.label :user_id%>
+        <%= hidden_field_tag "user_id", current_user.id %>
+        <%f.label :event_id%>
+        <%= hidden_field_tag "event_id", @event.id %>
+        <%= f.submit "Attend!", class:"button" %>
+      <%end%>
+    <%end%>
+    <%else%>
+Sign in to attend!  <%= link_to 'Sign In', new_user_session_path %>   <%= link_to 'Sign Up', new_user_registration_path %></br>
+
+  <%end%>
+
+<%if @user != nil%>
+  <%@event.guestlists.each do |f|%>
+  <% @event.guestlists.where(f.user_id == current_user.id)%>
+  <%end%>
 <%end%>
-<% if @event.guestlists.find_by(user_id: current_user.id) == nil%>
-<%= form_for [@event, @guestlist] do |f| %>
-<%f.label :user_id%>
-<%= hidden_field_tag "user_id", current_user.id %>
-<%f.label :event_id%>
-<%= hidden_field_tag "event_id", @event.id %>
-
-    <%= f.submit "Attend!", class:"button" %>
-
-<%end%>
-<%end%>
-
-<%@event.guestlists.each do |f|%>
-<% @event.guestlists.where(f.user_id == current_user.id)%>
-
-<%end%>
-
-<% if @event.guestlists.find_by(user_id: current_user.id) != nil%>
-Thank you for signing up!!! :)
-  <%= link_to "I'm not attending", event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete %>
+<%if @user != nil%>
+  <% if @event.guestlists.find_by(user_id: current_user.id) != nil%>
+    Thank you for signing up!!! :)
+    <%= link_to "I'm not attending", event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete %>
+  <%end%>
 <%end%>

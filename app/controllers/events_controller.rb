@@ -16,8 +16,10 @@ class EventsController < ApplicationController
     @user = current_user
     @guestlist = Guestlist.new
     @guestlists = @event.guestlists.order(created_at: :desc)
-    @event.guestlists.each do |f|
-      @user_on_list = @event.guestlists.where(f.user_id == current_user.id)
+    if @user != nil
+      @event.guestlists.each do |f|
+        @user_on_list = @event.guestlists.where(f.user_id == current_user.id)
+      end
     end
   end
 
