@@ -66,4 +66,6 @@ gem "pg_search"
 gem 'angularjs-rails'
 
 
+
+
 ruby "2.2.0"
