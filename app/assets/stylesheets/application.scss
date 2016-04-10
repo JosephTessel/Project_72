@@ -1,0 +1,473 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+
+
+.showtitle.image {
+  display: inline-block;
+  max-width: 1000px;
+
+}
+
+.actions {
+  color: red !important;
+}
+
+ $maincolor:#0683F3;
+ $secondarycolor:#000;
+ $thirdcolor:white;
+ $buttonhovercolor: #7AC0FF;
+ $textcolor:#FFFFFF;
+ $cursivefont:'Pacifico', cursive;
+ $smallfont:'Merriweather', serif;
+
+
+ body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-position: 0px 45px;
+  font-family: $smallfont;
+  font-size: 14px;
+ }
+
+
+//Changes size of designs/submit a design text
+.header {
+  font-family: $cursivefont;
+  font-size: 1.65rem;
+  padding-left: .8rem;
+  color: $secondarycolor;
+
+}
+
+.modal-header {
+  font-family: $cursivefont;
+  font-size: 1.65rem;
+  padding-left: .8rem;
+  color: $secondarycolor;
+
+}
+
+.submission {
+  text-align: center;
+}
+
+.top-bar img {
+  height: 100%;
+  /* float: left; */
+  margin-right: 10px;
+  background-color: $maincolor;
+}
+
+.top-bar h1 {
+  width: 0px;
+  margin-left: 100px;
+
+}
+
+.profile-photo {
+  color: $thirdcolor;
+  font-size: 1px;
+  margin-top: -2.3px;
+  img {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: -3px;
+    background: inherit;
+    border-radius: 100%;
+
+  }
+}
+
+.design-display img{
+  width: 500px;
+  height: auto;
+  display: inline-flex;
+  margin-bottom: 20px;
+  transition: all .15s ease-in-out;
+  display: inline-block;
+}
+
+.design-display :hover{
+  opacity: .8;
+  -webkit-transform: scale(1.11);
+  transform: scale(1.11);
+  font-family: $smallfont;
+
+}
+
+
+
+
+/* .design-display:hover .hover-text{
+
+  opacity: .8;
+  color: #000;
+  font-weight: 700;
+  font-family: $smallfont;
+} */
+#navlist li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+
+}
+
+.profile-photo li {
+  background: #000000;
+
+}
+
+//controls topbar height and color
+.top-bar {
+  background: $maincolor;
+  background-color: $maincolor;
+  height: 80px;
+  //controls logo in topbar
+  a {
+    line-height: 2.06rem;
+    font-family: $cursivefont;
+    font-size: 45px;
+    padding-top: 25px !important;
+  }
+  //controls logo position in topbar
+  h1 {
+    position:  static;
+    left: 46%;
+    padding-right: 90px;
+  }
+}
+
+
+//This is smaller top bar
+/* .top-bar {
+  background: $maincolor;
+  background-color: $maincolor;
+  height: 2rem;
+  a {
+    line-height: 2.06rem;
+    font-family: $cursivefont;
+  }
+}
+.top-bar-section li a:not(.button) {
+    background: $maincolor !important;
+    font-family: $smallfont;
+    font-size: .85rem;
+    -webkit-transform-style: preserve-3d;
+    line-height: 2rem !important;
+    transition: all .3s ease-out;
+
+}
+
+
+.top-bar-section li a:not(.button):hover {
+    background: $buttonhovercolor !important;
+    transition: all .3s ease-in-out;
+} */
+
+
+.top-bar-section li a:not(.button) {
+    background: $maincolor !important;
+    font-family: $smallfont;
+    font-size: 1rem;
+    -webkit-transform-style: preserve-3d;
+    /* line-height: 55px !important; */
+    transition: all .3s ease-out;
+    padding-top: 20px !important;
+
+}
+
+.top-bar-section li a:not(.button):hover {
+    background: $buttonhovercolor !important;
+    transition: all .3s ease-in-out;
+    line-height: 60px !important;
+}
+
+
+
+.button {
+  display: block;
+  background-color: $maincolor;
+
+  color: $textcolor;
+  span{
+
+    overflow: hidden;
+    &:hover{cursor: pointer;}
+  }
+}
+
+/* .button:hover {
+  background-color: $buttonhovercolor;
+}
+ */
+.top-bar-section .right {
+  background-color: $maincolor;
+  transition: all .3s ease-in-out;
+
+}
+
+/* this controls the header profile-photo box's name text  */
+.top-bar-section ul {
+  font-size: .85rem;
+  /* margin-right: 4px; */
+  background-color: $maincolor ;
+
+}
+
+
+.textboxes {
+
+}
+
+.title {
+  text-align: left;
+  color: $secondarycolor;
+  margin-bottom:15px;
+  margin-left: 10px;
+}
+
+.showtitle {
+  text-align: left;
+  color: $secondarycolor;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.design_name {
+  text-align: left;
+  color: $secondarycolor;
+  font-size: 14pt;
+  margin-left: 12px;
+}
+
+.design_description {
+  text-align: left;
+  color: $secondarycolor;
+  font-size: 12pt;
+  margin-left: 14px;
+  margin-bottom: 10px;
+}
+
+
+h5 {
+  text-align: center;
+}
+
+
+h1 a {
+  text-align: center;
+  color: $secondarycolor;
+  transition: .3s;
+}
+
+h1 {
+  font-family: $cursivefont;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: $secondarycolor;
+}
+
+h3 {
+  font-family: $smallfont;
+}
+
+
+/* h1 a:hover {
+  color: $maincolor;
+  text-align: center;
+    transition:  .3s ;
+}
+
+.juxtapose {
+  a {
+  color: $maincolor;
+  display: inline;
+  }
+  a:hover {
+    color: $thirdcolor;
+      transition: all .3s ease-in-out;
+      text-shadow:
+       -1px -1px 0 $maincolor,
+        1px -1px 0 $maincolor,
+        -1px 1px 0 $maincolor,
+         1px 1px 0 $maincolor;
+  }
+} */
+
+.review {
+  word-wrap: break-word;
+  padding-right: -15px;
+  img {
+    width: 3em;
+    height: 3em;
+    margin-bottom: 25px;
+    margin-top: -12px;
+    margin-right: 6px;
+    background: inherit;
+    border-radius: 100%;
+
+  }
+ }
+
+.portfolio img {
+  width: 3em;
+  height: 3em;
+  margin-top: 2px;
+  margin-right: 0px;
+  background: inherit;
+  border-radius: 100%;
+}
+
+.createdby {
+  padding-right: 5px;
+}
+
+
+.createdby img {
+  width: 3em;
+  height: 3em;
+  margin-top: 2px;
+  margin-right: 0px;
+  background: inherit;
+  border-radius: 100%;
+
+}
+
+.delete_edit {
+  text-align: center;
+}
+
+.full-width {
+  max-width: 1400px;
+}
+
+.footer {
+  background-color: $maincolor;
+
+  h4 {
+    color: $thirdcolor;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 10rem;
+    margin-bottom: 10px;
+  }
+  p {
+    font-weight: 300;
+    font-size: .8rem;
+  }
+  span {
+    font-size: 50px;
+    color: $thirdcolor;
+    margin-top: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media only screen and (min-width: 40.063em) {
+.footer {
+  .columns:nth-child(n+2) {
+     border-left: 1px solid scale-color(#fff, $lightness: -30%);
+  }
+ }
+}
+
+.footer-links {
+  list-style-type: none;
+  a {
+    color: $thirdcolor;
+    font-weight: 300;
+    font-size: .8rem;
+  }
+  li {
+    margin-top: .5rem;
+  }
+}
+
+
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+	margin-bottom: -125px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+	min-height: 150px;
+}
+.site-footer {
+  background: $maincolor;
+}
+
+.line {
+  font-family: times;
+  display: inline;
+  position-left: -10px;
+  font-size: 2rem;
+  font-weight: 200 !important;
+}
+//
+
+
+
+
+@import url('http://fonts.googleapis.com/css?family=Montserrat:700');
+
+*, *:before, *:after{
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+
+button{
+
+  background-color: $maincolor;
+  overflow: hidden;
+  outline: none;
+  color: $maincolor;
+
+  span{
+    &:hover{cursor: pointer;}
+  }
+}
+
+.circle{
+  display: block;
+  position: absolute;
+  background: rgba(0,0,0,.075);
+  border-radius: 50%;
+  transform: scale(0);
+
+  &.animate{animation: effect 0.65s linear;}
+}
+
+@keyframes effect{
+	100%{
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}

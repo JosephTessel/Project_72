@@ -65,7 +65,5 @@ gem "mini_magick"
 gem "pg_search"
 gem 'angularjs-rails'
 
-gem 'compass-rails'
-
 
 ruby "2.2.0"
