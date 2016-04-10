@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
+  validates :phone_number, presence: true, length: { maximum: 11 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
