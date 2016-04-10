@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%javascript_include_tag 'application'%>
 <html lang="en" ng-app="myApp">
 <head>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -17,7 +18,7 @@
         <%= current_user.email %>
       </div>
 
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <%- else -%>
       <%= link_to 'Sign Up', new_user_registration_path %></br>
       <%= link_to 'Sign In', new_user_session_path %>
