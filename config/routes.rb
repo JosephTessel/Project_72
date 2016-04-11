@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :events do
       resources :guestlists, only: [:new, :create, :destroy, :index, :show]
     end
-    resources :reviews, only: [:index]
 end
