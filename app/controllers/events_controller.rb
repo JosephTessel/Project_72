@@ -1,13 +1,12 @@
 class EventsController < ApplicationController
   def index
     @events= Event.all
-    if @user != nil
-      unless current_user.role == "admin"
+    if current_user != nil
+      if current_user.role != "admin"
         flash[:notice] = "You are not authorized to view this page."
+      elsif current_user.role == "admin"
+        @display = Event.where(verified: 0)
       end
-    else
-
-    Event.where(verified: 'false')
     end
   end
 
