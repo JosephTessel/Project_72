@@ -25,12 +25,14 @@
   </section>
 </nav>
 
-
-<%if current_user.role == "admin"%>
+<%if current_user != nil%>
+  <%if current_user.role == "admin"%>
 </br>
 </br>
 Verify Events!
+<%=@display.count%> to approve!
 <%@display.each do |f|%></br>
 <%=f.title%> (Created by <%=f.user.first_name + " " + f.user.last_name%>) <%= link_to "edit", edit_event_path(f.id) %>
+<%end%>
 <%end%>
 <%end%>
