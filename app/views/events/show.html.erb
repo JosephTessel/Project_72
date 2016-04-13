@@ -3,6 +3,7 @@
 <%= "event description: " +@event.description %> </br>
 <%="event date: "+ @event.date %> </br>
 <%="event creator: "%>
+<%=image_tag(@event.event_image) %>
 <%= @event.user.first_name%>
 <%= @event.user.last_name%></br>
 </br>

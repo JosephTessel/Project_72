@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
- 
+ *=require foundation_and_overrides
 
  */
 
@@ -83,7 +83,7 @@
 
 .profile-photo {
   color: $thirdcolor;
-  font-size: 1px;
+  font-size: 1lpx;
   margin-top: -2.3px;
   img {
     width: 1.8rem;

@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160411184607) do
     t.string   "date",                    null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.string   "event_image"
+    t.string   "event_image",             null: false
     t.integer  "verified",    default: 0
   end
 
