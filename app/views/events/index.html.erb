@@ -1,29 +1,15 @@
-<%= link_to "Submit an Event", new_event_path %>
 <!DOCTYPE html>
 <html>
 <head>
+  <div class = "textboxes center-text">
   <title>Events</title>
-
-
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <section class="profile-photo">
-  <h1><a href="/events">Events</a></h1>
-      <%- if current_user -%>
+  <video width="1265" height="1697" loop muted autoplay preload="auto" style="visibility: visible; position: relative;">   ;
+  <source src="http://video.wixstatic.com/video/054803_5a083841a85245e1a7006a204aaae925/480p/mp4/file.mp4" type="video/mp4">
+</video>
 
-          <div class='user-email'>
-            <%= current_user.email %>
-          </div>
-
-          <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-        <%- else -%>
-              <%= link_to 'Sign Up', new_user_registration_path %></br>
-          <%= link_to 'Sign In', new_user_session_path %>
-        <%- end -%>
-        </div>
-    </ul>
-  </section>
 </nav>
 
 <%if current_user != nil%>
@@ -35,5 +21,6 @@ Verify Events!
 <%@display.each do |f|%></br>
 <%=f.title%> (Created by <%=f.user.first_name + " " + f.user.last_name%>) <%= link_to "edit", edit_event_path(f.id) %>
 <%end%>
+</div>
 <%end%>
 <%end%>

@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<%javascript_include_tag 'application'%>
-<html lang="en" ng-app="myApp">
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
-  <title>Project72</title>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="application" type="text/css" href="../assets/stylesheets/application.scss" />
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= link_to "Main Page", events_path %>
-</br></br>
-  <%- if current_user -%>
+  </head>
 
-      <div class='user-email'>
-        <%= current_user.email %>
-      </div>
+  <body>
 
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <%- else -%>
-      <%= link_to 'Sign Up', new_user_registration_path %></br>
-      <%= link_to 'Sign In', new_user_session_path %>
-    <%- end -%>
-<%= yield %>
+    <nav class="top-bar">
 
-</body>
+
+        <a href="/"><bold>- Project 72 </bold>-</a>
+
+
+        <% if current_user %>
+
+           <href="#" data-dropdown="hover1" aria-controls="hover1" aria-expanded="false" data-options="is_hover:true;"> <%=current_user.first_name.capitalize%> <%=current_user.last_name.capitalize%>&nbsp;
+
+
+      <% else %>
+      <ul class>
+        <li><a href="#" data-reveal-id="SignUpModal">Sign Up</a></li>
+        <li><a href="#" data-reveal-id="SignInModal">Sign In</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+</nav>
+    <%= yield %>
+  </body>
 </html>
