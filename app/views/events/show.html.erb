@@ -3,10 +3,10 @@
 <%= "event description: " +@event.description %> </br>
 <%="event date: "+ @event.date %> </br>
 <%="event creator: "%>
-<%=image_tag(@event.event_image) %>
 <%= @event.user.first_name%>
 <%= @event.user.last_name%></br>
 </br>
+<%=image_tag(@event.event_image) %>
 </br>
 
 <%if @user != nil%>
@@ -30,7 +30,7 @@
       <%end%>
     <%end%>
     <%else%>
-<h1>Sign in to attend!  <%= link_to 'Sign In', new_user_session_path %>   <%= link_to 'Sign Up', new_user_registration_path %></br></h1>d
+<h1>Sign in to attend!<%= link_to 'Sign In', new_user_session_path %>   <%= link_to 'Sign Up', new_user_registration_path %></br></h1>d
 
   <%end%>
 

@@ -78,38 +78,13 @@
   background-color: $maincolor;
   letter-spacing: 0px;
   line-height: 31px;
+  z-index: +2;
 }
 
-.video {
-  visibility: visible;
-  position: relative;
-  min-width: 1265px;
-  min-height: 1697px;
-  left: 0px;
-  top: -500.5px;
-  
+video {
+   z-index: -1;
+   margin-top: -400px;
 }
-
-.design-display img{
-  width: 500px;
-  height: auto;
-  display: inline-flex;
-  margin-bottom: 20px;
-  transition: all .15s ease-in-out;
-  display: inline-block;
-}
-
-.design-display :hover{
-  opacity: .8;
-  -webkit-transform: scale(1.11);
-  transform: scale(1.11);
-  font-family: $smallfont;
-
-}
-
-
-
-
 /* .design-display:hover .hover-text{
 
   opacity: .8;
@@ -120,15 +95,9 @@
 #navlist li {
   display: inline;
   list-style-type: none;
-  padding-right: 20px;
+
 
 }
-
-.profile-photo li {
-  background: #000000;
-
-}
-
 .top-bar-section li a:not(.button) {
     background: $maincolor !important;
     font-family: $smallfont;
@@ -136,14 +105,14 @@
     -webkit-transform-style: preserve-3d;
     /* line-height: 55px !important; */
     transition: all .3s ease-out;
-    padding-top: 20px !important;
+
 
 }
 
 .top-bar-section li a:not(.button):hover {
     background: $buttonhovercolor !important;
     transition: all .3s ease-in-out;
-    line-height: 60px !important;
+
 }
 
 
@@ -165,7 +134,7 @@
 }
  */
 .top-bar-section .right {
-  background-color: $maincolor;
+  background-color:red;
   transition: all .3s ease-in-out;
 
 }
@@ -190,27 +159,7 @@
   margin-left: 10px;
 }
 
-.showtitle {
-  text-align: left;
-  color: $secondarycolor;
-  margin-bottom: 15px;
-  text-align: center;
-}
 
-.design_name {
-  text-align: left;
-  color: $secondarycolor;
-  font-size: 14pt;
-  margin-left: 12px;
-}
-
-.design_description {
-  text-align: left;
-  color: $secondarycolor;
-  font-size: 12pt;
-  margin-left: 14px;
-  margin-bottom: 10px;
-}
 
 
 h5 {
