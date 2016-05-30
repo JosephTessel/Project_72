@@ -19,9 +19,11 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
-    unless current_user.role == "admin"
-      redirect_to root_path
-      flash[:notice] = "You are not authorized to view this!"
+    if current_user != nil
+      unless current_user.role == "admin"
+        redirect_to root_path
+        flash[:notice] = "You are not authorized to view this!"
+      end
     end
   end
 

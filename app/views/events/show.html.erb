@@ -1,12 +1,10 @@
 </br></br>
-<%= "event title: " + @event.title %> </br>
+<h1 class="title"><%=  @event.title %> </br></h1>
+<h1 class="creator"><%= @event.user.first_name%> <%= @event.user.last_name%></br></h1>
+<h1 class="creator"><%="event date: "+ @event.date %> </br></h1>
 <%= "event description: " +@event.description %> </br>
-<%="event date: "+ @event.date %> </br>
-<%="event creator: "%>
-<%= @event.user.first_name%>
-<%= @event.user.last_name%></br>
 </br>
-<%=image_tag(@event.event_image) %>
+<div class="event image"> <%=image_tag(@event.event_image) %> </div>
 </br>
 
 <%if @user != nil%>

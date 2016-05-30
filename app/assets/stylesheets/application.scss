@@ -21,7 +21,6 @@
 
 
 .showtitle.image {
-  display: inline-block;
   max-width: 1000px;
 
 }
@@ -53,7 +52,7 @@
 .header {
   font-family: $logofont;
   font-size: 1.65rem;
-  padding-left: .8rem;
+  padding-left: 0px;
 
 }
 
@@ -71,7 +70,7 @@
 
 .top-bar {
   height: 53px;
-  font-size: 31.5px;
+  font-size: 31px;
   font-family: $logofont;
   color: $thirdcolor;
   background: $maincolor;
@@ -79,11 +78,35 @@
   letter-spacing: 0px;
   line-height: 31px;
   z-index: +2;
+
+
+  span {
+  font-family: helvetica;
+  font-size: 16px;
+  line-height: 29px;
+    .right {
+      word-spacing: 30px !important;
+    }
+  }
+
+
+  a {
+  left: 200px;
+  font: inherit;
+  font-size: inherit;
+
+  }
+  ul {
+    background-color: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 video {
    z-index: -1;
-   margin-top: -400px;
+   margin-top: -50px;
 }
 /* .design-display:hover .hover-text{
 
@@ -98,6 +121,7 @@ video {
 
 
 }
+
 .top-bar-section li a:not(.button) {
     background: $maincolor !important;
     font-family: $smallfont;
@@ -133,35 +157,42 @@ video {
   background-color: $buttonhovercolor;
 }
  */
-.top-bar-section .right {
-  background-color:red;
-  transition: all .3s ease-in-out;
-
-}
-
-/* this controls the header profile-photo box's name text  */
-.top-bar-section ul {
-  font-size: .85rem;
-  /* margin-right: 4px; */
-  background-color: $maincolor ;
-
-}
-
-
-.textboxes {
-
-}
 
 .title {
-  text-align: left;
-  color: $secondarycolor;
-  margin-bottom:15px;
+  text-align: center;
+  color: black;
   margin-left: 10px;
+  font: $logofont;
 }
 
+.creator {
+  text-align: center;
+  color: black;
+  margin-bottom:15px;
+  margin-left: 10px;
+  font-size: 16px;
+}
 
+.event.image {
+  display: inline-block;
+  width: 100%;
+  max-height: 1000;
 
+}
+.approval {
+  color: $maincolor;
+}
+title {
+  font: apyrus;
+}
 
+img {
+  display: inline-block;
+  width: 250px;
+  max-height: 250px;
+  padding-right: 10px;
+
+}
 h5 {
   text-align: center;
 }

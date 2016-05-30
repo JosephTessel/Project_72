@@ -13,26 +13,26 @@
   </head>
 
 
+
   <nav class="top-bar">
-
-
-      <a href="/"><bold>- Project 72 -</bold></a>
-
-
-  <% if current_user %>
-  <class>
-  <href="#" data-dropdown="hover1" aria-controls="hover1" aria-expanded="false" data-options="is_hover:true;"> <%=current_user.first_name.capitalize%> <%=current_user.last_name.capitalize%>&nbsp;
-
-
-    <% else %>
-    <ul class>
-      <li><a href="#" data-reveal-id="SignUpModal">Sign Up</a></li>
-      <li><a href="#" data-reveal-id="SignInModal">Sign In</a></li>
-      <% end %>
-    </ul>
-  </div>
-  </section>
-  </nav>
+      <section class="top-bar-section">
+        <bold href="/">- Project 72 -</bold>
+        <span class=left>
+          <a href="#"> About Us </a>
+            <a href="#"> Opportunities </a>
+            <a href="#"> Gallery </a>
+            <a href="#"> Get Involved </a>
+            <a href="#"> Meet Us </a>
+          </span>
+        <% if current_user %>
+        <span class=right>
+          <href="#"> <%=current_user.first_name.capitalize%> <%=current_user.last_name.capitalize%>&nbsp;
+        <% else %>
+          <%=link_to 'Sign Up', new_user_registration_path %><%=link_to 'Sign In', new_user_session_path %></a>
+        <% end %>
+      </section>
+    </nav>
+</nav>
 
 
 <%=yield%>
@@ -82,3 +82,29 @@
   <% end %>
 </div> -->
 </html>
+
+<% if false %>
+  <!-- Logo -->
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#"> thenewboston</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon">
+      <h1><a href="#"><span></span></a></h1>
+    </li>
+  </ul>
+  <!-- Buttons -->
+  <section class="top-bar-section">
+    <!-- Right Buttons -->
+    <ul class="right">
+      <li><a href="#"> Profile </a></li>
+      <li><a href="#"> Profile </a></li>
+    </ul>
+
+    <!-- Left Buttons -->
+    <ul class="left">
+      <li><a href="#"> Profile </a></li>
+      <li><a href="#"> Profile </a></li>
+    </ul>
+  </section>%>
+<% end %>
