@@ -21,6 +21,7 @@
 $( "#review-title").on('click touch', function(){update_reviews(this);});
 $(function(){ $(document).foundation(); });
 
+$(document).foundation();
 
 
 function update_reviews(data){
@@ -88,4 +89,9 @@ $(function(){
 function getCurrentScroll() {
     return window.pageYOffset || document.documentElement.scrollTop;
     }
+});
+
+$( "#settings, #admin_settings" ).on( "click", function()
+{
+		$( "#menu" ).fadeToggle( "fast" );
 });

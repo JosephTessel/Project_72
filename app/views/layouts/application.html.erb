@@ -7,34 +7,34 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <script type="text/javascript" src="/js/foundation.min.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
+<body>
 
-
-  <nav class="top-bar">
+</body>
+  <div class="top-bar large-12 columns, contain-to-grid">
       <section class="top-bar-section">
         <bold href="/">- Project 72 -</bold>
-        <span class=left>
-          <a href="#"> About Us </a>
-            <a href="#"> Opportunities </a>
-            <a href="#"> Gallery </a>
-            <a href="#"> Get Involved </a>
-            <a href="#"> Meet Us </a>
-          </span>
+        <li><a href="#"> Meet Us </a>
+        <li><a href="#"> Opportunities </a>
+        <li><a href="#"> Gallery </a>
+        <li><a href="#"> Get Involved </a>
+        <li><a href="#"> Meet Us </a>
+        </ul>
+        <span class="UserSpace">
         <% if current_user %>
-        <span class=right>
-          <href="#"> <%=current_user.first_name.capitalize%> <%=current_user.last_name.capitalize%>&nbsp;
+           <a class="button" data-dropdown="drop"><%=current_user.first_name.capitalize%> <%=current_user.last_name.capitalize%>&nbsp;</a>
         <% else %>
           <%=link_to 'Sign Up', new_user_registration_path %><%=link_to 'Sign In', new_user_session_path %></a>
         <% end %>
+      </span>
       </section>
-    </nav>
-</nav>
 
-
+</div>
 <%=yield%>
 
   <!-- <body>
@@ -82,7 +82,14 @@
   <% end %>
 </div> -->
 </html>
+<!-- <% if current_user %>
+<ul id="hover1" class="f-dropdown" data-dropdown-content>
+  <li><a href="/users/edit" >joj Profile</a></li>
+  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+</ul>
 
+<% end %>
+</ul>
 <% if false %>
   <!-- Logo -->
   <ul class="title-area">

@@ -36,6 +36,8 @@
  $textcolor:#FFFFFF;
  $logofont: lobster,cursive;
  $smallfont:'Merriweather', serif;
+ /* $background-color: rgb(230, 230, 230) */
+ ;
 
 
  body {
@@ -78,24 +80,38 @@
   letter-spacing: 0px;
   line-height: 31px;
   z-index: +2;
+  vertical-align: middle;
 
+  li {
+    display: inline;
+    font-family: helvetica;
+    font-stretch: condensed;
+    font-size: 20px;
+    line-height: 27px;
+    padding-left: 30px;
+    padding-right: 20px;
+    text-align: center;
+    vertical-align: middle;
 
-  span {
-  font-family: helvetica;
-  font-size: 16px;
-  line-height: 29px;
-    .right {
-      word-spacing: 30px !important;
+  }
+  ul {
+
+    a {
+      margin: 30px;
+      font: inherit;
+      font-size: inherit;
     }
   }
 
-
-  a {
-  left: 200px;
-  font: inherit;
-  font-size: inherit;
-
+  .UserSpace {
+    float: right;
+    font-family: helvetica;
+    font-stretch:condensed;
+    font-size: 16px;
+    line-height: 36px;
+    vertical-align: bottom;
   }
+
   ul {
     background-color: inherit;
     list-style-type: none;
@@ -122,12 +138,12 @@ video {
 
 }
 
-.top-bar-section li a:not(.button) {
+/* .top-bar-section li a:not(.button) {
     background: $maincolor !important;
     font-family: $smallfont;
     font-size: 1rem;
     -webkit-transform-style: preserve-3d;
-    /* line-height: 55px !important; */
+    line-height: 55px !important;
     transition: all .3s ease-out;
 
 
@@ -137,9 +153,87 @@ video {
     background: $buttonhovercolor !important;
     transition: all .3s ease-in-out;
 
+} */
+
+
+.about{
+  .header {
+  font-family: spinnaker, sans-serif;
+  font-size: 54px;
+  line-height: 54px;
+  letter-spacing: 13.5px;
+  padding-top: 30px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.topic.left {
+  font-family: "Times New Roman", Times, italic;
+  font-style: italic;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 1px;
+  padding-top: 30px;
+  padding-left: 17.25%;
+  img{
+    width: 94px;
+    height: 103px;
+    margin-left: 2.6%;
+  }
 }
 
 
+  .paragraph.left {
+    font-family: spinnaker, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0px;
+    padding-top: 5px;
+    padding-left: 18%;
+    text-align: center;
+    width: 367px;
+
+}
+.topic.right {
+  float: right;
+  font-family: "Times New Roman", Times, italic;
+  font-style: italic;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 1px;
+  padding-top: 30px;
+  margin-left: 42px;
+  padding-right: 10%;
+  width: 380px;
+  img{
+    width: 96px;
+    height: 71px;
+    margin-left: 20%;
+  }
+}
+
+
+  .paragraph.right {
+    float: right;
+    font-family: spinnaker, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 14px;
+    text-align: center;
+    margin-right: 20px;
+    padding-right: 10px;
+    width: 262px;
+
+}
+
+}
 
 .button {
   display: block;
