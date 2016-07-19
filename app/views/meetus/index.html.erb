@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
+<link href='https://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
+<html>
+  <head>
+    <div class = "textboxes center-text">
+    <title>Events</title>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="about">
+    </br></br><h1 class="header">- Meet The Team-</h1></br>
+
+<% @heroes.each do |f| %>
+<div class="about_us">
+  <span class=one><%= f.first_name + " " + f.last_name %></span>
+  <span class=two><p>  <%=f.description%></p></span>
+</div>
+
+<%end%>
+
+
+
+
+
+      </div>
+
+        </div>
+
+
+  </body>
+</html>

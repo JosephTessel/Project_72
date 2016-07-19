@@ -1,22 +1,32 @@
 <%= link_to "Submit an Event", new_event_path %>
 <!DOCTYPE html>
 
+<h1 class="pageheader">Edit Event</h1>
+
 <%= form_for @event do |f| %>
+  <div class="form">
+    <%= f.label :title %>
+    <%= f.text_field :title, required:true %>
 
-<%= f.label :title %>
-<%= f.text_field :title, required:true %>
+    <%= f.label :description %>
+    <%= f.text_field :description, required:true %>
 
-<%= f.label :description %>
-<%= f.text_field :description, required:true %>
+    <%= f.label :date %>
+    <%= f.text_field :date, required:true %>
 
-<%= f.label :date %>
-<%= f.text_field :date, required:true %>
+    Current Image:
+    <% if @event.event_image != nil%>
+      <div class="event image"> <%=image_tag(@event.event_image) %> </div><br><br>
 
-<%= f.label :event_image, "Select Your Image" %>
-<%= f.file_field :event_image %>
+    <%else%>
+    <br>
+    This Event is Missing an Image!
+    <%end%>
+    <%= f.label :event_image, "Select Your Image" %>
+    <%= f.file_field :event_image %>
 
-<%= f.label :verified, "Verify?" %>
-<%= f.check_box :verified %>
-
-<%= f.submit "Edit Event!", class:"button" %>
+    <%= f.check_box :verified %><%= f.label :verified, "Verify?" %>
+</br>
+<span float=right><%= f.submit "Edit Event!", class:"button" %></span>
 <%end%>
+</div>

@@ -81,7 +81,11 @@
   line-height: 31px;
   z-index: +2;
   vertical-align: middle;
-
+  
+  display: inline;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   li {
     display: inline;
     font-family: helvetica;
@@ -92,25 +96,33 @@
     padding-right: 20px;
     text-align: center;
     vertical-align: middle;
-
-  }
-  ul {
-
+    position: fixed;
+    display: inline;
+    bold {
+      font-family: $logofont;
+      font-size: 31px;
+    }
     a {
+      overflow: visible;
+      display: inline;
       margin: 30px;
       font: inherit;
       font-size: inherit;
+
     }
   }
 
   .UserSpace {
     float: right;
+    position: relative;
     font-family: helvetica;
-    font-stretch:condensed;
+    font-stretch: condensed;
     font-size: 16px;
-    line-height: 36px;
-    vertical-align: bottom;
-  }
+    top: 10px;
+    align: right;
+    display: inline;
+
+      }
 
   ul {
     background-color: inherit;
@@ -122,7 +134,9 @@
 
 video {
    z-index: -1;
-   margin-top: -50px;
+   margin-top: -103px;
+   position: fixed;
+
 }
 /* .design-display:hover .hover-text{
 
@@ -236,10 +250,13 @@ video {
 }
 
 .button {
-  display: block;
-  background-color: $maincolor;
+  background-color: inherit;
+  height: auto;
+  color: $maincolor;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 13px !important;
 
-  color: $textcolor;
   span{
 
     overflow: hidden;
@@ -247,10 +264,48 @@ video {
   }
 }
 
-/* .button:hover {
-  background-color: $buttonhovercolor;
+.bless {
+  font-size: 29px;
+  font-family: impact;
+  color: $textcolor;
+  float: right;
+  z-index: 1;
+  padding-right: 4%;
 }
- */
+.introbar {
+  background-color: #999999;
+  text-align: center;
+  font-family: impact;
+  font-size: 22px;
+  color: $textcolor;
+  letter-spacing: 7px;
+
+}
+
+
+
+.button {
+  height: auto;
+  color: $textcolor;
+  background-color: $maincolor;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 13px !important;
+  border-color: $maincolor;
+
+  span{
+
+    overflow: hidden;
+    &:hover{cursor: pointer;}
+  }
+}
+
+.button:hover {
+  background-color: #52EA25;
+  border-style: solid;
+  color: $maincolor;
+  border-color: $maincolor;
+}
 
 .title {
   text-align: center;
@@ -415,6 +470,37 @@ html, body {
 //
 
 
+.about_us {
+  padding-top: 2rem;
+  padding-left: 20%;
+  padding-bottom: 1rem;
+  color: $maincolor;
+  font-family: Helvetica;
+
+  span.one {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  span.two {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    p {
+    padding-top: 2px;
+    width: 650px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  }
+
+
+}
+
+.adminpage {
+  text-align: center;
+  font-size: 45px;
+  color: red;
+}
 
 
 @import url('http://fonts.googleapis.com/css?family=Montserrat:700');
@@ -425,12 +511,11 @@ html, body {
 }
 
 button{
-
   background-color: $maincolor;
   overflow: hidden;
   outline: none;
   color: $maincolor;
-
+  margin: 0 !important;
   span{
     &:hover{cursor: pointer;}
   }
@@ -444,6 +529,23 @@ button{
   transform: scale(0);
 
   &.animate{animation: effect 0.65s linear;}
+}
+
+.pageheader {
+  font-family: $logofont;
+  font-size: 4rem;
+
+  text-align: center;
+  color: $maincolor;
+
+
+}
+
+.form{
+  color: $maincolor;
+  max-width: 1200px;
+  position: centered;
+  padding-left: 80px;
 }
 
 @keyframes effect{

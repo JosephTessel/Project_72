@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster"/>
+<link href='https://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
+<html>
+<div class="adminpage"> Events </div>
+
+
+<%if current_user != nil%>
+  <%if current_user.role == "admin"%></br></br>
+  <div class="title"><%=@display.count%> Events to Verify!</div>
+    <div class="small-11 columns">
+      <div class="panel">
+        <%@display.each do |f|%></br>
+          <div class="approval">
+            <%=link_to image_tag(f.event_image),edit_event_path(f.id)%><%=f.title%> (Created by <%=f.user.first_name + " " + f.user.last_name%>) <%= link_to "edit", edit_event_path(f.id) %>
+            <%end%>
+          </div>
+          <%end%>
+      </div>
+      <%end%>
+    </div>
+
+  </div>
+  <div class="adminpage"> Team Members  </div>
+Dropdown
+
+<%= select("first_name", "user_id", @users) %>
+
+</html>
