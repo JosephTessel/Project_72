@@ -6,36 +6,13 @@
   <title>Events</title>
   <%= csrf_meta_tags %>
 </head>
-<nav class=bless>בס"ד</nav><div>
+<body>
+<% @event_to_display.each do |f| %>
+  <h1 class="title">
+     <span class="event_index">
+       <div class="row">
+         <div class="image large-3 medium-6 columns end">    <%=link_to image_tag(f.event_image), event_path(f.id) %> </span></div>
 
-</div>
-
-<test>.<p><p><p.><p><p><p><p><p>
-
-</p></p></p></p></p></test>
-<nav class=introbar>
-      ALL IT TAKES IS 72 MINUTES </nav>
-  <video width=100% height=100% controls loop muted autoplay preload="auto" style="visibility: visible; position: relative;" z-index="0" margin-top="-100px">   ;
-  <source src="http://video.wixstatic.com/video/054803_5a083841a85245e1a7006a204aaae925/480p/mp4/file.mp4" type="video/mp4">
-</video>
-<img src="https://static.wixstatic.com/media/0da768_880a3209e3744cd0a96b66835a01b8c5.png" class="imtip" />
-</nav>
-</div>
-
-<%if current_user != nil%>
-  <%if current_user.role == "admin"%>
-  </br>
-  </br>
-  <div class="title"><%=@display.count%> Events to Verify!</div>
-  <div class="small-11 columns">
-    <div class="panel">
-      <%@display.each do |f|%></br>
-        <div class="approval">
-          <%=link_to image_tag(f.event_image),edit_event_path(f.id)%><%=f.title%> (Created by <%=f.user.first_name + " " + f.user.last_name%>) <%= link_to "edit", edit_event_path(f.id) %>
-        </div>
-      <%end%>
-    </div>
-  <%end%>
-</div>
-<%end%>
-</div>
+    <%end%>
+</span>
+  </h1>

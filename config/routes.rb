@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root 'events#index'
+  root 'home#index'
   devise_for :users
 resources :about, only: [:index]
+resources :home, only: [:index]
 resources :admin, only: [:index]
 resources :meetus, only: [:index]
   resources :events do
