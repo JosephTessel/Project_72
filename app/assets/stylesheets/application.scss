@@ -670,7 +670,7 @@ video {
 }
 
 .button:hover {
-  background-color: #52EA25;
+  background-color: #ffcf30;
   border-style: solid;
   color: $maincolor;
   border-color: $maincolor;
@@ -691,12 +691,28 @@ video {
   font-size: 16px;
 }
 
-.event.image {
-  display: inline-block;
-  width: 100%;
-  max-height: 1000;
-
+.Gematriatitle {
+  color: red;
+  font-family: 'Oswald', sans-serif;
+  font-size: 52px;
 }
+
+.event_image {
+    display: inline-block;
+    width: 250px;
+    max-height: 250px;
+    padding-right: 10px;
+
+  }
+
+
+  pimg {
+    display: inline-block;
+    max-width: 250px;
+    max-height: 250px;
+    padding-right: 10px;
+
+  }
 .approval {
   color: $maincolor;
 }
@@ -729,13 +745,7 @@ title {
    }
 }
 
-img {
-  display: inline-block;
-  width: 250px;
-  max-height: 250px;
-  padding-right: 10px;
 
-}
 h5 {
   text-align: center;
 }

@@ -4,7 +4,7 @@
 <h1 class="creator"><%="event date: "+ @event.date %> </br></h1>
 <%= "event description: " +@event.description %> </br>
 </br>
-<div class="event image"> <%=image_tag(@event.event_image) %> </div>
+<div class=event_image> <%=image_tag(@event.event_image) %> </div>
 </br>
 
 <%if @user != nil%>
@@ -40,6 +40,6 @@
 <%if @user != nil%>
   <% if @event.guestlists.find_by(user_id: current_user.id) != nil%>
     Thank you for signing up!!! :)
-    <%= link_to "I'm not attending", event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete %>
+    <%= button_to "I'm not attending", event_guestlist_path(@event, @event.guestlists.find_by(user_id: current_user.id)), method: :delete, class:"button" %>
   <%end%>
 <%end%>

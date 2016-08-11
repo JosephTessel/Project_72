@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
+<%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <script type="text/javascript" src="/js/foundation.min.js"></script>
@@ -23,7 +24,7 @@
         <div class="linkow small-1 columns"><a href="#"> Gallery </a></div>
         <div class="userspace small-2 columns" href="#">
         <% if current_user %>
-            <a href="/users/edit" data-dropdown="drop"><%=current_user.first_name.capitalize%> <%=current_user.last_name.capitalize%>&nbsp;</a></div>
+            <a href="/users/edit" data-dropdown="drop"><%=current_user.first_name.first.capitalize%> <%=current_user.last_name.capitalize%>&nbsp;</a></div>
             <% else %>
          <a href="#" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:5000"><%= image_tag("user.png")%></a></div>
 
